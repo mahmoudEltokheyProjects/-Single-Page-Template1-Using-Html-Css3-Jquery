@@ -1,0 +1,926 @@
+@charset "UTF-8";
+/*
+	######################################################################
+									Global
+	######################################################################
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ################################### start our framework الكلاسات الاكثر استخدام في الموقع ################################### */
+.container {
+  width: 85%;
+  margin: 0px auto;
+  position: relative;
+}
+
+.display-table {
+  /*  لتوسيط العنصر display-table في الجدول حيث هستخدم ال row  داخل cell والمحتوي اللي موجود بداخله هعتبره table هو ال container هعتبر ان ال */
+  height: 100%;
+  display: table;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.main-color {
+  color: #f7600e;
+}
+
+.main-background {
+  background-color: #f7600e;
+}
+
+/* /////// overlay layer ////// */
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(49, 55, 61, 0.9);
+  color: #fff;
+}
+
+/* placeholder of all inputFields : for all browsers */
+::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+::-moz-input-placeholder {
+  font-size: 16px;
+}
+
+::-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ######################################### start header section ######################################### */
+.header {
+  background-image: url("../images/header-back2.jpeg");
+  -webkit-background-image: url("../images/header-back2.jpeg");
+  -moz-background-image: url("../images/header-back2.jpeg");
+  -o-background-image: url("../images/header-back2.jpeg");
+  /* /////////////////////////////////// navbar layer //////////////////////////////////// */
+  /* /////////////////////////////////// intro part :  .header  .intro  /////////////////////////////////// */
+  /* ///////////////////////////////////  .header	 .buttons   /////////////////////////////////// */
+  /* ///////////////////////////////////  .header		.arrow   /////////////////////////////////// */
+}
+.header .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 20px;
+  /*	border: 2px solid #f00 ;   */
+  /* =========================== navbar layer : right part : links =========================== */
+  /* =========================== navbar layer : right part : links : menubar icon =========================== */
+}
+.header .navbar .logo {
+  width: 22%;
+  float: left;
+  height: auto;
+  overflow: hidden;
+  font-size: 24px;
+  padding: 11px;
+  /*    border: 2px solid #f00 ; */
+}
+.header .navbar .links {
+  float: right;
+  display: none;
+  margin-top: 5px;
+}
+.header .navbar i {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.header .navbar .linksContainer {
+  width: 78%;
+  float: right;
+  text-align: right;
+  /*  border: 2px solid #0f0 ;      */
+}
+.header .navbar .linksContainer ul {
+  list-style: none;
+}
+.header .navbar .linksContainer ul li {
+  display: inline-block;
+}
+.header .navbar .linksContainer ul li a {
+  text-transform: capitalize;
+  margin: 10px;
+  text-decoration: none;
+  color: #fff;
+  /* transition خواص ال */
+}
+.header .navbar .linksContainer ul li a:hover {
+  color: #f7600e;
+}
+.header .navbar .linksContainer ul li a.active {
+  color: #f7600e;
+}
+.header .intro {
+  width: 100%;
+  /*    border: 3px solid #f00 ;    */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* *************** intro part :   .header	.intro 		h1  *************** */
+  /* *************** intro part :   .header	.intro 		p  *************** */
+}
+.header .intro h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 50px;
+}
+.header .intro p {
+  margin: 5px 0px 40px 0px;
+  line-height: 1.5;
+  font-size: 20px;
+  color: #E2E2E2;
+}
+.header .buttons {
+  /* =======================  .header	 .buttons  button  ======================= */
+}
+.header .buttons button {
+  background-color: transparent;
+  padding: 10px 0px;
+  width: 180px;
+  font-size: 14px;
+  border: 1px solid #909090;
+  margin: 0px 8px;
+  /*	border-radius: 10px ;*/
+  cursor: pointer;
+  /* =======================  .header	 .buttons  button:hover  ======================= */
+}
+.header .buttons button:hover {
+  background-color: #f7600e;
+  color: #fff;
+  border: 1px solid #909090;
+}
+.header .arrow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+  /* ==================  .header	 .arrow  i  ================== */
+}
+.header .arrow i {
+  border: 2px solid #7B7B7B;
+  padding: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 37px;
+}
+
+/* ########################################### header : Responsive ########################################### */
+@media (min-width: 0px) and (max-width: 970px) {
+  .header .navbar {
+    padding: 12px 20px;
+    /* ------------------------- .header .navbar .links --------------------------- **/
+    /* ------------------------- .header .navbar .logs ,  .header .navbar  .linksContainer --------------------------- **/
+    /* ------------------------- .header .navbar .linksContainer --------------------------- **/
+  }
+  .header .navbar .links {
+    display: block;
+  }
+  .header .navbar .logo,
+.header .navbar .linksContainer {
+    width: 100%;
+    float: none;
+    /* border: 2px solid #f0f ;    */
+  }
+  .header .navbar .linksContainer {
+    /* when click on menubar icon , navbar links will appear */
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    /*      border: 2px solid #ff0 ; */
+    display: none;
+    /* هياخذ الصف الثالث كله right <li> هياخذ الصف كله و كل logo هتاخذ الصف كله وال left <li> كل */
+  }
+  .header .navbar .linksContainer li {
+    float: none;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+/* ////////////////////////////////////// header : Responsive ////////////////////////////////////////// */
+@media (min-width: 0px) and (max-width: 692px) {
+  .header {
+    /* ================================== header : intro  ================================== */
+    /* ========================== header : .buttons  =========================== */
+  }
+  .header .intro {
+    /* *************** intro part : h1  *************** */
+    /* *************** intro part : p  *************** */
+  }
+  .header .intro h1 {
+    font-size: 35px;
+  }
+  .header .intro p {
+    font-size: 15px;
+  }
+  .header .buttons {
+    /* ========================== header : .buttons  button  =========================== */
+  }
+  .header .buttons button {
+    padding: 8px 0px;
+    width: 120px;
+    font-size: 14px;
+  }
+}
+/* ######################################################### end header section ############################################## */
+/* ################################################ start features ########################################################### */
+.features {
+  width: 100%;
+  height: auto;
+  padding: 80px 0px;
+  /* لا يؤثر علي العناصر اللي بعده float عشان لما اعمل */
+  overflow: hidden;
+}
+.features .box {
+  width: 22%;
+  float: left;
+  height: auto;
+  overflow: hidden;
+  margin-right: 4%;
+}
+.features .box:last-child {
+  margin-right: 0;
+}
+.features .box i {
+  width: 120px;
+  height: 120px;
+  color: #f7600e;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  /* box بتاع الايقون عشان الايقون تكون في منتصف ال height نفس قيمة ال line-height هخلي قيمة ال */
+  line-height: 120px;
+}
+
+.features .box i:hover {
+  background-color: #f7600e;
+  color: #fff;
+  border: 1px solid #f7600e;
+}
+
+.features .box h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #505050;
+}
+
+.features .box p {
+  line-height: 1.9;
+  color: #888;
+}
+
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media (min-width: 0px) and (max-width: 692px) {
+  .features .box {
+    width: 46%;
+    margin: 0px auto;
+  }
+
+  .features .box i {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
+  }
+}
+/* ##################################### End features ###################################### */
+/* ##################################### start subscribe ###################################### */
+.subscribe {
+  background-image: url(../images/subscribe.jpeg);
+  background-attachment: fixed;
+  /* border: 2px solid #f00 ; */
+}
+
+.subscribe form {
+  width: 100%;
+  padding: 100px 0px;
+  margin: 0px auto;
+  /*	border: 2px solid #f00 ; */
+}
+
+.subscribe form input[type=email] {
+  position: relative;
+  top: 0px;
+  width: 320px;
+  height: 37px;
+  line-height: 37px;
+  padding: 0px 15px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 0;
+  outline: 0;
+}
+
+.subscribe form .subscribeBtn {
+  padding: 10px;
+  width: 200px;
+  background-color: #f7600e;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  /* transition خواص ال */
+}
+
+.subscribe form .subscribeBtn:hover {
+  background-color: #fff;
+  color: #f7600e;
+}
+
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media (min-width: 0px) and (max-width: 692px) {
+  .subscribe form input[type=email] {
+    width: 70%;
+    float: left;
+    margin-right: 2%;
+    font-size: 13px;
+  }
+
+  .subscribe form .subscribeBtn {
+    width: 26%;
+    float: right;
+    padding: 10px;
+    margin-left: 2%;
+  }
+
+  .subscribe form input[type=email]::-webkit-input-placeholder {
+    font-size: 13px;
+  }
+}
+/* ##################################### star our work ###################################### */
+.our-work {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  /*	border: 2px solid #0ff ;   */
+  margin: 20px 0px;
+}
+
+.our-work .ourWorkH2 {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.our-work .ourWorkPara {
+  line-height: 2;
+  margin: 10px 0px 40px 0px;
+}
+
+.our-work .showMoreBtn {
+  width: 180px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  outline: 0;
+  color: #555;
+  cursor: pointer;
+  /* transition خواص ال */
+}
+
+.our-work .showMoreBtn:hover {
+  background-color: #f7600e;
+  border: 1px solid #f7600e;
+  color: #fff;
+}
+
+.our-work .containerItemBox {
+  width: 70%;
+  height: auto;
+  overflow: hidden;
+  margin: 0px auto;
+}
+
+.our-work .items-box {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 10px auto;
+  /*	border: 2px solid #f00 ;   */
+}
+
+.our-work .items-box .item {
+  position: relative;
+  float: left;
+  width: 32.3333%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 1%;
+  margin-right: 1%;
+  border-radius: 10px;
+}
+
+.our-work .items-box .item:last-child {
+  margin-right: 0;
+}
+
+.our-work .items-box .item img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+/* -------- overlay layer on each item -------- */
+.our-work .items-box .item .over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+  background-color: #f7600e;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.our-work .items-box .item:hover .over {
+  display: block;
+}
+
+.our-work .items-box .item .over .overlayItemH4 {
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.our-work .items-box .item .over .overlayItemPara {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.our-work .items-box .item .over .showProject {
+  width: 180px;
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  /* transition خواص ال */
+}
+
+.our-work .items-box .item .over .showProject:hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #f7600e;
+}
+
+.our-work .items-box .item .showMoreBtn {
+  width: 100%;
+  display: block;
+  text-align: center;
+  border: 2px solid #f0f;
+  margin-bottom: 50px;
+  border: 0;
+  outline: 0;
+}
+
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media (min-width: 0px) and (max-width: 800px) {
+  .our-work .items-box .item {
+    width: 98%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+
+  /*   -------- overlay layer on each item --------  */
+  .our-work .items-box .item .over .overlayItemH4 {
+    font-size: 25px;
+    margin-top: 80px;
+    margin-bottom: 0;
+  }
+
+  .our-work .items-box .item .over .overlayItemPara {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    padding: 5px;
+  }
+
+  .our-work .items-box .item .over .showProject {
+    width: 150px;
+    padding: 10px;
+  }
+}
+@media (min-width: 801px) and (max-width: 1000px) {
+  .our-work .items-box .item {
+    width: 48%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+
+  /* -------- overlay layer on each item --------   */
+  .our-work .items-box .item .over .overlayItemH4 {
+    font-size: 22px;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+
+  .our-work .items-box .item .over .overlayItemPara {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    padding: 5px;
+  }
+
+  .our-work .items-box .item .over .showProject {
+    width: 150px;
+    padding: 10px;
+  }
+}
+/* ##################################### start testimonials #################################### */
+.testim {
+  background-image: url("../images/lap-stat.jpg");
+  background-attachment: fixed;
+}
+
+.testim .clients {
+  padding: 50px 0px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.testim .clients img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.testim .clients .testimPara {
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* arrows of testimonials */
+.testim .container .fa-chevron-left,
+.testim .container .fa-chevron-right {
+  position: absolute;
+  top: 50%;
+  color: #999;
+  cursor: pointer;
+  /* transition خواص ال */
+}
+
+/* arrows of testimonials */
+.testim .container .fa-chevron-left:hover,
+.testim .container .fa-chevron-right:hover {
+  color: #f7600e;
+}
+
+/* left arrow of testimonials */
+.testim .container .fa-chevron-left {
+  left: -10px;
+}
+
+/* rgiht arrow of testimonials */
+.testim .container .fa-chevron-right {
+  right: -30px;
+}
+
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media (min-width: 0px) and (max-width: 800px) {
+  .testim .clients .testimPara {
+    font-size: 16px;
+    padding: 20px;
+  }
+}
+/* ######################################### start our team ###################################### */
+.our-team {
+  width: 100%;
+  padding: 50px 0px;
+}
+
+.our-team .ourTeamH2 {
+  font-size: 35px;
+  margin-bottom: 0;
+}
+
+.our-team .ourTeamPara {
+  line-height: 1.5;
+  margin: 10px 0px 40px 0px;
+  line-height: 1.5;
+  color: #666;
+  font-size: 20px;
+}
+
+.our-team .the-team {
+  overflow: hidden;
+}
+
+.our-team .the-team .person {
+  float: left;
+  width: 24%;
+  margin-left: 1%;
+  /*  للون الاسود  <h3> , <p>  عليه يحول ال hover عشان لما اعمل gray لونه person هخلي لون اي نص داخل الديف اللي واخد كلاس */
+  color: #666;
+  /*  smooth  يتغير بشكل <h3> , <p> هخلي لون ال person علي الديف اللي واخد كلاس hover عشان لما هعمل  */
+  /* transition خواص ال */
+}
+
+/*   #000 لونه person هخلي لون اي عنوان او نص داخل الديف اللي واخد كلاس person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team .the-team .person:hover {
+  color: #000;
+}
+
+.our-team .the-team .person:first-child {
+  margin-left: 0%;
+}
+
+.our-team .the-team .person img {
+  width: 100%;
+  height: 290px;
+  /*  وهبعت لها 1 يعني بقول لها اشتغلي grayscale حيث هنادي علي الدالة gray اللي اسمه filter يعني لونها رمادي فهطبق ال grayscale عشان اخلي الصورة   */
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  filter: grayscale(1);
+  /* smooth هخلي لون الصورة يتغير بشكل  person علي الديف اللي واخد كلاس hover عشان لما هعمل  */
+  /* transition خواص ال */
+}
+
+/*   grayscale  اللي انا مطبقه علي الصورة وهوقف تنفيذ الدالة Filter فهلغي ال rgb هخلي الصورة ملونة person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team .the-team .person:hover img {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.our-team .the-team .person .teamPara {
+  font-size: 15px;
+}
+
+.our-team .the-team .person .social-icons i {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 5px;
+  background-color: #9da1a5;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  /* smooth هخلي لون الايقونات يتغير بشكل  person علي الديف اللي واخد كلاس hover عشان لما هعمل  */
+  /* transition خواص ال */
+}
+
+/*   #3b5992 لونه person هخلي لون الفيسبوك ايقون داخل الديف اللي واخد كلاس person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team .the-team .person:hover .social-icons .fa-facebook {
+  background-color: #3b5992;
+}
+
+/*   #55acee لونه person هخلي لون تويتر ايقون داخل الديف اللي واخد كلاس person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team .the-team .person:hover .social-icons .fa-twitter {
+  background-color: #55acee;
+}
+
+/*   #3b5992 لونه person هخلي لون جوجل بلس ايقون داخل الديف اللي واخد كلاس person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team .the-team .person:hover .social-icons .fa-google-plus {
+  background-color: #dc4e41;
+}
+
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media (min-width: 0px) and (max-width: 800px) {
+  .our-team .ourTeamH2 {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+
+  .our-team .ourTeamPara {
+    font-size: 14px;
+  }
+
+  .our-team .the-team .person {
+    width: 48%;
+    margin-left: 0%;
+    margin-right: 2%;
+  }
+
+  .our-team .the-team .person:last-child {
+    margin: 0%;
+  }
+}
+/* ##################################### start contact form #################################### */
+.contact {
+  background-image: url("../images/contact_back.jpeg");
+  /*    border: 2px solid #f00 ;    */
+}
+
+.contact .overlay {
+  padding: 50px 0px;
+  color: #fff;
+}
+
+.contact .contactH2 {
+  font-size: 35px;
+}
+
+.contact .contactPara {
+  line-height: 1.5;
+}
+
+.contact form {
+  width: 700px;
+  margin: 50px auto;
+  text-align: center;
+  /*    border: 2px solid #f0f ;    */
+}
+
+.contact form input[type=email],
+.contact form input[type=text] {
+  /* total_width = 48 + 48 + 5 + 5 = 100%  */
+  width: 48%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: 0;
+  background-color: transparent;
+  color: #fff;
+}
+
+.contact form input[type=email] {
+  float: left;
+  margin-left: 0%;
+  margin-right: 2%;
+}
+
+.contact form input[type=text] {
+  float: right;
+  margin-left: 2%;
+  margin-right: 0%;
+}
+
+.contact form textarea {
+  width: 100%;
+  height: 180px;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #fff;
+  outline: 0;
+}
+
+.contact form input::-webkit-input-placeholder,
+.contact form textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.contact form .form_info {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.contact form .form_info .hireUsBtn {
+  float: left;
+  width: 180px;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #f7600e;
+  border-radius: 10px;
+  /* transition خواص ال */
+}
+
+.contact form .form_info .hireUsBtn:hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #f7600e;
+}
+
+.contact form .form_info .form-icons {
+  float: right;
+}
+
+.contact form .form_info .form-icons i {
+  background-color: #9da1a5;
+  width: 40px;
+  height: 40px;
+  /* vertically عشان الايقوانات تكون في المنتصف */
+  line-height: 40px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.contact form .form_info .form-icon .fa-facebook {
+  background-color: #3b5998;
+}
+
+.contact form .form_info .form-icons .fa-twitter {
+  background-color: #55acee;
+}
+
+.contact form .form_info .form-icons .fa-google-plus {
+  background-color: #dc4e41;
+}
+
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media (min-width: 0px) and (max-width: 800px) {
+  .contact .contactH2 {
+    font-size: 30px;
+  }
+
+  .contact .contactPara {
+    font-size: 14px;
+  }
+
+  .contact form {
+    width: 100%;
+  }
+
+  .contact form .form_info .hireUsBtn {
+    float: left;
+    width: 100px;
+    padding: 10px;
+  }
+}
+/*	##################################### start footer form #######################################  */
+.footer {
+  background-color: #3b434c;
+  color: #fff;
+  padding: 20px 0px;
+  overflow: hidden;
+}
+
+.footer .footerCopyright {
+  float: left;
+}
+
+.footer .footerDesign {
+  float: right;
+}
+
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media (min-width: 0px) and (max-width: 800px) {
+  .footer .footerCopyright {
+    font-size: 15px;
+  }
+
+  .footer .footerDesign {
+    font-size: 14px;
+  }
+}
+/* ------------------------------------ classes to Extend ------------------------------------ */
+.header, .subscribe, .testim, .contact {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.header .navbar .linksContainer ul li a, .header .buttons button, .features .box i, .subscribe form .subscribeBtn, .our-work .showMoreBtn, .our-work .items-box .item .over .showProject, .testim .container .fa-chevron-left,
+.testim .container .fa-chevron-right, .our-team .the-team .person, .our-team .the-team .person img, .our-team .the-team .person .social-icons i, .contact form .form_info .hireUsBtn {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+/*# sourceMappingURL=style.css.map */

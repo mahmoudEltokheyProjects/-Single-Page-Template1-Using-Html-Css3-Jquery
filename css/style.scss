@@ -1,0 +1,1027 @@
+/*
+	######################################################################
+									Global
+	######################################################################
+*/
+// ------------------------------------ variables Declaration ------------------------------------
+$mainColor:#f7600e ;
+$mainFontSize: 16px ;
+$floatLeft:left ;
+$floatRight:right;
+$direction:ltr ;
+*   
+{
+	-webkit-box-sizing: border-box ;
+	box-sizing: border-box ;	
+	font-family: sans-serif ;
+}
+body
+{
+	margin: 0 ;
+	padding: 0 ;
+}
+/* ################################### start our framework الكلاسات الاكثر استخدام في الموقع ################################### */
+.container
+{
+	width: 85% ;
+	margin: 0px auto ;
+	position: relative ;  
+}
+.display-table
+{
+	/*  لتوسيط العنصر display-table في الجدول حيث هستخدم ال row  داخل cell والمحتوي اللي موجود بداخله هعتبره table هو ال container هعتبر ان ال */
+	height: 100% ;
+	display: table ;
+}
+.table-row
+{
+	display: table-row ;
+}
+.text-center
+{
+	text-align: center ; 
+}
+.upper
+{
+	text-transform: uppercase ;
+}
+.main-color
+{
+	color: $mainColor ;
+}
+.main-background
+{
+	background-color: $mainColor ;
+}
+/* /////// overlay layer ////// */
+.overlay
+{
+	width: 100% ;
+	height: 100% ;
+	background-color: rgba(49,55,61,0.9);
+	color: #fff ;
+}
+/* placeholder of all inputFields : for all browsers */
+::-webkit-input-placeholder	
+{
+	font-size: $mainFontSize ;
+}
+::-moz-input-placeholder
+{
+	font-size: $mainFontSize ;
+}
+::-ms-input-placeholder
+{
+	font-size: $mainFontSize ;
+}
+.hidden
+{
+	display: none ;
+}
+/* ######################################### start header section ######################################### */
+.header
+{
+    @extend %bk_cover ;
+	background-image: url("../images/header-back2.jpeg");
+	-webkit-background-image: url("../images/header-back2.jpeg");
+	-moz-background-image: url("../images/header-back2.jpeg");
+	-o-background-image: url("../images/header-back2.jpeg");
+    /* /////////////////////////////////// navbar layer //////////////////////////////////// */
+   	.navbar
+    {
+        position: fixed ;
+        top: 0 ;
+        left: 0 ;
+        width: 100% ;
+        overflow: hidden ;
+        padding: 12px  20px ;
+    /*	border: 2px solid #f00 ;   */
+        // =========================== navbar layer : left part : logo =========================== 
+        .logo
+        {
+            width: 22% ;
+            float: $floatLeft ;
+            height: auto ;
+            overflow: hidden ;
+            font-size: $mainFontSize + 8 ; 
+            padding: 11px ;
+        /*    border: 2px solid #f00 ; */
+        }
+        /* =========================== navbar layer : right part : links =========================== */
+      	.links
+        {
+            float: $floatRight ;
+            display: none ;  
+            margin-top: 5px ;
+            // border: 2px solid #ff0 ;
+        }
+        /* =========================== navbar layer : right part : links : menubar icon =========================== */
+        i
+        {
+            margin-left: 5px ;
+            cursor: pointer ; 	
+        }
+        // =========================== navbar layer : right part : links =========================== 
+        .linksContainer
+        {
+            width: 78% ;
+            float: $floatRight ;
+            text-align: right ;
+        /*  border: 2px solid #0f0 ;      */
+            // ++++++++++ navbar layer : right part : links : ul ++++++++++ 
+            ul
+            {
+                list-style: none ;
+                // ++++++++++ navbar layer : right part : links : ul : li ++++++++++ 
+                 li
+                {
+                    display: inline-block ;
+                    // ++++++++++ navbar layer : right part : links : ul : li : a ++++++++++ 
+                    a
+                    {
+                        text-transform: capitalize ;
+                        margin: 10px ;
+                        text-decoration: none ;
+                        color: #fff ;
+                        /* transition خواص ال */
+                        @extend %transition ;
+                        // ++++++++++ navbar layer : right part : links : ul : li : a:hover ++++++++++ 
+                        &:hover
+                        {
+                            color: $mainColor ;
+                        }
+                        // ++++++++++ navbar layer : right part : links : ul : li : a.active ++++++++++ 
+                        &.active
+                        {
+                            color: $mainColor ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* /////////////////////////////////// intro part :  .header  .intro  /////////////////////////////////// */
+    .intro
+    {
+        width: 100% ; 
+    /*    border: 3px solid #f00 ;    */
+        position: absolute ;
+        left: 50%; 
+        top: 50% ;
+        transform: translate(-50%,-50%);
+        /* *************** intro part :   .header	.intro 		h1  *************** */
+       	h1
+        {
+            margin:  0 ;
+            font-weight: 800 ;
+            font-size: $mainFontSize + 34 ;
+        } 
+        /* *************** intro part :   .header	.intro 		p  *************** */
+        p
+        {
+            margin: 5px 0px 40px 0px ;
+            line-height: 1.5 ;
+            font-size: $mainFontSize + 4 ;
+            color: #E2E2E2 ; 
+        }
+    }
+    /* ///////////////////////////////////  .header	 .buttons   /////////////////////////////////// */
+    .buttons
+    {
+        /* =======================  .header	 .buttons  button  ======================= */
+        button
+        {
+            background-color: transparent ;
+            padding: 10px 0px ;
+            width: 180px ;
+            font-size: $mainFontSize - 2 ;
+            border: 1px solid #909090 ;
+            margin: 0px  8px ;
+        /*	border-radius: 10px ;*/
+            cursor: pointer ;
+            @extend %transition ;
+            /* =======================  .header	 .buttons  button:hover  ======================= */
+            &:hover
+            {
+                background-color: $mainColor ;
+                color: #fff ;
+                border: 1px solid #909090 ;
+            }   
+        }
+    }
+    /* ///////////////////////////////////  .header		.arrow   /////////////////////////////////// */
+    .arrow
+    {
+        position: absolute ; 
+        bottom: 0 ;
+        left:  0 ;
+        width: 100% ;
+        text-align: center ; 
+        padding: 10px  0px ; 
+        /* ==================  .header	 .arrow  i  ================== */
+        i
+        {
+            border: 2px solid #7B7B7B ;
+            padding: 0px ;
+            border-radius: 50% ;
+            cursor: pointer ;
+            width: 40px ;
+            height: 40px ;
+            line-height: 37px ;
+        }
+    }
+
+}
+/* ########################################### header : Responsive ########################################### */
+@media(min-width:0px) and (max-width:970px)
+{
+    .header	
+    {
+        .navbar
+        {
+            padding: 12px  20px ;
+            /* ------------------------- .header .navbar .links --------------------------- **/
+            .links
+            {
+                display: block ;
+            }
+            /* ------------------------- .header .navbar .logs ,  .header .navbar  .linksContainer --------------------------- **/
+             .logo             ,
+             .linksContainer  
+            {
+                width: 100%;
+                float: none;
+                /* border: 2px solid #f0f ;    */
+            }	
+            /* ------------------------- .header .navbar .linksContainer --------------------------- **/
+            .linksContainer 
+            {
+                /* when click on menubar icon , navbar links will appear */
+                display: block; 
+                text-align: center;
+                margin-top: 25px;
+                margin-bottom: 25px;
+        /*      border: 2px solid #ff0 ; */
+                display: none ;
+                /* هياخذ الصف الثالث كله right <li> هياخذ الصف كله و كل logo هتاخذ الصف كله وال left <li> كل */
+                li 
+                {
+                    float: none ;
+                    width: 100%;  
+                    margin-top: 20px ;
+                    margin-bottom: 20px ;
+                }   
+            }
+        }
+    }
+    
+}
+/* ////////////////////////////////////// header : Responsive ////////////////////////////////////////// */
+@media( min-width:0px ) and ( max-width:692px )
+{
+   .header	
+   {
+        /* ================================== header : intro  ================================== */
+        .intro
+        {
+            /* *************** intro part : h1  *************** */
+            h1
+            {
+                font-size: $mainFontSize + 19 ;
+            }
+            /* *************** intro part : p  *************** */
+            p
+            {
+                font-size: $mainFontSize - 1 ;
+            }
+        }
+        /* ========================== header : .buttons  =========================== */
+        .buttons
+        {
+            /* ========================== header : .buttons  button  =========================== */
+            button
+            {
+                padding: 8px 0px ;
+                width: 120px ;
+                font-size: $mainFontSize - 2 ;
+            }
+        }
+   }
+}
+/* ######################################################### end header section ############################################## */
+/* ################################################ start features ########################################################### */
+.features
+{
+    width: 100% ;
+    height: auto ;
+	padding: 80px  0px ;
+	/* لا يؤثر علي العناصر اللي بعده float عشان لما اعمل */
+    overflow: hidden ;
+    // ---------------------------------- .features  .box  ----------------------------------
+    .box 
+    {
+        width: 22% ;
+        float: $floatLeft ;
+        height: auto ;
+        overflow: hidden ;
+        margin-right: 4% ;
+        // ---------------------------------- .features  .box:last-child  ----------------------------------
+        &:last-child
+        {
+            margin-right: 0 ;
+        }
+        // ---------------------------------- .features	.box	i  ----------------------------------
+        i
+        {
+            width: 120px ;
+            height: 120px ;
+            color: $mainColor ;
+            border-radius: 50% ;
+            border: 1px solid #ccc ;
+            /* box بتاع الايقون عشان الايقون تكون في منتصف ال height نفس قيمة ال line-height هخلي قيمة ال */
+            line-height: 120px ; 
+            @extend %transition ;
+        }
+                // ---------------------------------- .features	.box	i  ----------------------------------
+
+    }
+
+
+}
+.features	.box	i:hover
+{
+	background-color: $mainColor ; 
+	color: #fff ;
+	border: 1px solid $mainColor ;
+}
+.features	.box	h3
+{
+	font-weight: normal ;
+	text-transform: uppercase ;
+	color: #505050 ;
+}
+.features	.box	p
+{
+	line-height: 1.9 ;
+	color: #888 ;
+}
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media( min-width:0px ) and ( max-width:692px )
+{
+    .features	.box 
+    {
+        width: 46% ;
+        margin: 0px auto ;
+    }
+
+    .features	.box	i
+    {
+        width: 80px ;
+        height: 80px ;
+        line-height: 80px ; 
+        font-size: $mainFontSize + 14 ;
+    }
+}
+/* ##################################### End features ###################################### */
+/* ##################################### start subscribe ###################################### */
+.subscribe
+{
+    @extend %bk_cover ;
+    background-image: url(../images/subscribe.jpeg);
+    background-attachment: fixed ;
+   /* border: 2px solid #f00 ; */ 
+}
+.subscribe	form
+{
+	width: 100% ;
+	padding: 100px  0px ;
+	margin: 0px auto ;
+/*	border: 2px solid #f00 ; */
+}
+.subscribe		form	   input[ type="email" ]
+{
+	position: relative ;
+	top: 0px ;
+	width: 320px ;
+	height: 37px ;
+	line-height: 37px ;
+	padding: 0px   15px ; 
+	font-size: $mainFontSize + 4 ;
+	border-radius: 10px ;
+	border: 0 ; 
+	outline: 0 ;
+}
+.subscribe		form		.subscribeBtn
+{
+	padding: 10px ;
+	width: 200px ;
+	background-color: $mainColor ;
+	border: none ;
+	color: #fff ;
+	border-radius: 10px ;
+	margin-left: 30px ;
+	font-size: $mainFontSize - 2 ;
+    cursor: pointer ;
+    /* transition خواص ال */
+    @extend %transition ;
+}
+.subscribe	form	.subscribeBtn:hover
+{
+	background-color: #fff ;
+	color: $mainColor ;
+}
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media( min-width:0px ) and ( max-width:692px )
+{
+    .subscribe		form	   input[ type="email" ]
+    {
+        width: 70% ;
+        float: $floatLeft ;
+        margin-right: 2% ;
+        font-size: $mainFontSize - 3 ;     
+    }
+    .subscribe		form	   .subscribeBtn
+    {
+        width: 26% ;
+        float: $floatRight ;
+        padding: 10px ;
+        margin-left: 2% ;
+    }
+    .subscribe		form	   input[ type="email" ]::-webkit-input-placeholder
+    {
+        font-size: $mainFontSize - 3 ;     
+    }
+}
+/* ##################################### star our work ###################################### */
+.our-work
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #0ff ;   */
+	margin: 20px   0px ;
+}
+.our-work	.ourWorkH2
+{
+	font-size: $mainFontSize + 24 ; 
+	font-weight: 500 ;
+	margin-bottom: 0 ;
+}
+.our-work	.ourWorkPara
+{
+	line-height: 2 ;
+	margin: 10px	0px 	40px	0px ; 
+}
+.our-work	.showMoreBtn
+{
+	width: 180px ;
+	margin-top: 20px ;
+	padding: 10px ;
+	border-radius: 10px ;
+	background-color: transparent ;
+	border: 1px solid #ccc ;
+    outline: 0 ;
+	color: #555 ;
+	cursor: pointer ;
+    /* transition خواص ال */
+    @extend %transition ;
+}
+.our-work	.showMoreBtn:hover
+{
+	background-color: $mainColor ;
+	border: 1px solid $mainColor ; 
+	color: #fff ;
+}
+.our-work   .containerItemBox
+{
+    width: 70% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 0px auto ;
+}
+.our-work	.items-box
+{
+	width: 100% ;
+	height: auto ;
+	overflow: hidden ;  
+	margin: 10px auto ;
+/*	border: 2px solid #f00 ;   */
+}
+.our-work	.items-box	.item
+{
+	position: relative ;
+	float: $floatLeft ;
+	width: 32.3333% ;
+	height: 300px ;
+	overflow: hidden ;
+    margin-bottom: 1% ;
+	margin-right: 1% ;
+	border-radius: 10px ;
+}
+.our-work	.items-box	.item:last-child
+{
+	margin-right: 0 ;
+}
+.our-work	.items-box	.item	img
+{
+	width: 100% ;
+	height: 300px ;
+	border-radius: 10px ;
+}
+/* -------- overlay layer on each item -------- */ 
+.our-work	.items-box	.item 	.over
+{
+	position: absolute ;
+	top: 0 ;
+	left: 0 ;
+	width: 100% ;
+	height: 100% ;
+	overflow: hidden ;
+	display: none ;
+	background-color: $mainColor ;
+	color: #fff ;
+	border-radius: 10px ;
+}
+.our-work	.items-box	.item:hover	 .over
+{
+	display: block ;
+}
+.our-work	.items-box	.item 	.over	.overlayItemH4
+{
+	font-size: $mainFontSize + 4 ;
+	margin-top: 50px ;
+	margin-bottom: 0 ;
+}
+.our-work	.items-box	.item 	.over	.overlayItemPara
+{
+	margin-top: 10px ;
+	margin-bottom: 30px ;
+	line-height: 1.5 ;
+}
+.our-work	.items-box	.item 	.over	.showProject
+{
+	width: 180px ;
+	padding: 10px ;
+	background-color: transparent ;
+	color: #fff ;
+	cursor: pointer ;
+	border: 1px	solid	#fff ; 
+	border-radius: 10px ;
+    /* transition خواص ال */
+    @extend %transition ;
+}
+.our-work	.items-box	.item 	.over	.showProject:hover
+{
+	background-color: #fff ;
+	border: 1px solid	#fff ; 
+	color: $mainColor ;
+}
+.our-work	.items-box	.item	.showMoreBtn
+{
+	width: 100%;
+	display: block ;
+	text-align: center ;
+	border: 2px solid #f0f ;
+	margin-bottom: 50px ;
+	border: 0 ;
+	outline: 0 ;
+}
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media( min-width:0px ) and ( max-width:800px )
+{
+    .our-work	.items-box	.item
+    {
+        width: 98% ;       
+        margin-bottom: 2% ;
+        margin-right: 2% ;
+    }
+    /*   -------- overlay layer on each item --------  */
+    .our-work	.items-box	.item 	.over	.overlayItemH4
+    {
+        font-size: 25px ;
+        margin-top: 80px ;
+        margin-bottom: 0 ;
+    }
+    .our-work	.items-box	.item 	.over	.overlayItemPara
+    {
+        font-size: $mainFontSize + 1 ;
+        margin-top: 10px ;
+        margin-bottom: 30px ;
+        line-height: 1.5 ;
+        padding: 5px ;
+    }
+    .our-work	.items-box	.item 	.over	.showProject
+    {
+        width: 150px ;
+        padding: 10px ;
+    }
+}
+@media( min-width:801px ) and ( max-width:1000px )
+{
+    .our-work	.items-box	.item
+    {
+        width: 48% ;       
+        margin-bottom: 2% ;
+        margin-right: 2% ;
+    }
+     /* -------- overlay layer on each item --------   */
+    .our-work	.items-box	.item 	.over	.overlayItemH4
+    {
+        font-size: $mainFontSize + 6 ;
+        margin-top: 100px ;
+        margin-bottom: 0 ;
+    }
+    .our-work	.items-box	.item 	.over	.overlayItemPara
+    {
+        font-size: $mainFontSize - 1 ;
+        margin-top: 10px ;
+        margin-bottom: 30px ;
+        line-height: 1.5 ;
+        padding: 5px ;
+    }
+    .our-work	.items-box	.item 	.over	.showProject
+    {
+        width: 150px ;
+        padding: 10px ;
+    }
+}
+/* ##################################### start testimonials #################################### */
+.testim
+{
+    @extend %bk_cover ;
+    background-image: url("../images/lap-stat.jpg");
+    background-attachment: fixed ;
+}
+.testim		.clients
+{
+	padding: 50px 0px ;
+	color: #fff ;
+	font-size: $mainFontSize + 4  ;
+}
+.testim		.clients	img
+{
+	width: 100px ;
+	height: 100px ;
+	border-radius: 50% ;
+}
+.testim		.clients	.testimPara
+{
+	line-height: 1.5 ;
+	font-style: italic ;
+}
+/* arrows of testimonials */
+.testim		.container 	.fa-chevron-left	,
+.testim		.container 	.fa-chevron-right
+{
+	position: absolute ;
+	top: 50% ;
+	color: #999 ;
+	cursor: pointer ;
+    /* transition خواص ال */
+    @extend %transition ;
+}
+/* arrows of testimonials */
+.testim		.container 	.fa-chevron-left:hover	,
+.testim		.container 	.fa-chevron-right:hover
+{
+	color: $mainColor ;
+}
+/* left arrow of testimonials */
+.testim		.container 	.fa-chevron-left
+{	
+	left: -10px ;
+}
+/* rgiht arrow of testimonials */
+.testim		.container 	.fa-chevron-right
+{
+	right: -30px ;
+}
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media( min-width:0px ) and ( max-width:800px )
+{
+    .testim		.clients	.testimPara
+    {
+        font-size: $mainFontSize ;
+        padding: 20px ;
+    }
+}
+/* ######################################### start our team ###################################### */
+.our-team
+{
+    width: 100% ; 
+    padding: 50px  0px ;
+}
+.our-team   .ourTeamH2
+{
+    font-size: $mainFontSize + 19 ;
+    margin-bottom: 0 ;
+}
+.our-team   .ourTeamPara
+{
+    line-height: 1.5 ;
+    margin: 10px 0px 40px 0px ;
+    line-height: 1.5 ;  
+    color: #666 ;
+    font-size: $mainFontSize + 4 ;
+}
+.our-team   .the-team
+{
+    overflow: hidden ;
+}
+.our-team   .the-team   .person
+{
+    float: $floatLeft ;
+    width: 24% ;
+    margin-left: 1% ;
+    /*  للون الاسود  <h3> , <p>  عليه يحول ال hover عشان لما اعمل gray لونه person هخلي لون اي نص داخل الديف اللي واخد كلاس */
+    color: #666 ;   
+    /*  smooth  يتغير بشكل <h3> , <p> هخلي لون ال person علي الديف اللي واخد كلاس hover عشان لما هعمل  */
+    /* transition خواص ال */
+    @extend %transition ;
+}
+/*   #000 لونه person هخلي لون اي عنوان او نص داخل الديف اللي واخد كلاس person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team   .the-team   .person:hover   
+{
+    color: #000 ;
+}
+.our-team   .the-team   .person:first-child
+{
+    margin-left: 0% ;
+}
+.our-team   .the-team   .person    img
+{
+    width: 100% ;
+    height: 290px ;  
+    /*  وهبعت لها 1 يعني بقول لها اشتغلي grayscale حيث هنادي علي الدالة gray اللي اسمه filter يعني لونها رمادي فهطبق ال grayscale عشان اخلي الصورة   */
+    filter: gray ;
+    -webkit-filter: grayscale(1) ;
+    -moz-filter: grayscale(1) ;
+    filter: grayscale(1) ;
+    /* smooth هخلي لون الصورة يتغير بشكل  person علي الديف اللي واخد كلاس hover عشان لما هعمل  */
+    /* transition خواص ال */
+    @extend %transition ;
+} 
+/*   grayscale  اللي انا مطبقه علي الصورة وهوقف تنفيذ الدالة Filter فهلغي ال rgb هخلي الصورة ملونة person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team   .the-team   .person:hover    img
+{
+    filter: none ;
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    filter: grayscale(0);
+}
+.our-team   .the-team   .person    .teamPara
+{
+    font-size: $mainFontSize - 1 ;
+}
+.our-team   .the-team   .person  .social-icons  i
+{
+    width: 30px ;
+    height: 30px ; 
+    line-height: 30px ;
+    margin: 5px ;
+    background-color: #9da1a5 ;
+    color: #fff ;
+    border-radius: 50% ;
+    cursor: pointer ;
+    font-size: $mainFontSize ; 
+    /* smooth هخلي لون الايقونات يتغير بشكل  person علي الديف اللي واخد كلاس hover عشان لما هعمل  */
+    /* transition خواص ال */
+    @extend %transition ;
+}
+/*   #3b5992 لونه person هخلي لون الفيسبوك ايقون داخل الديف اللي واخد كلاس person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team   .the-team   .person:hover    .social-icons  .fa-facebook  
+{
+    background-color: #3b5992 ;      
+}
+/*   #55acee لونه person هخلي لون تويتر ايقون داخل الديف اللي واخد كلاس person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team   .the-team   .person:hover    .social-icons  .fa-twitter  
+{
+    background-color: #55acee ;      
+}
+/*   #3b5992 لونه person هخلي لون جوجل بلس ايقون داخل الديف اللي واخد كلاس person علي الديف اللي واخد كلاس hover عشان لما هعمل */
+.our-team   .the-team   .person:hover    .social-icons  .fa-google-plus  
+{
+    background-color: #dc4e41 ;      
+}
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media( min-width:0px ) and ( max-width:800px )
+{
+    .our-team   .ourTeamH2
+    {
+        font-size: $mainFontSize + 14 ;
+        margin-bottom: 0 ;
+    }
+    .our-team   .ourTeamPara
+    {
+        font-size: $mainFontSize - 2 ;
+    }
+    .our-team   .the-team   .person
+    {
+        width: 48% ;
+        margin-left: 0% ;
+        margin-right: 2% ;
+    }
+    .our-team   .the-team   .person:last-child
+    {
+        margin: 0% ;
+    }
+}
+/* ##################################### start contact form #################################### */
+.contact
+{
+   @extend %bk_cover ;
+   background-image: url("../images/contact_back.jpeg");
+/*    border: 2px solid #f00 ;    */
+}
+.contact    .overlay
+{
+    padding: 50px 0px ;
+    color: #fff ;
+}
+.contact    .contactH2
+{
+    font-size: $mainFontSize + 19 ;
+}
+.contact    .contactPara
+{
+    line-height: 1.5 ;
+}   
+.contact    form 
+{
+    width: 700px ;
+    margin: 50px auto ;
+    text-align: center ;
+/*    border: 2px solid #f0f ;    */
+}
+.contact    form     input[ type="email" ]  ,
+.contact    form     input[ type="text"  ]   
+{
+    /* total_width = 48 + 48 + 5 + 5 = 100%  */
+    width: 48% ;
+    height: 40px ;
+    padding: 10px ;
+    border-radius: 10px ;
+    font-size: $mainFontSize - 2 ;
+    border: 1px solid #ccc ;
+    outline: 0 ;    
+    background-color: transparent ;
+    color: #fff ;
+}
+.contact    form     input[ type="email" ] 
+{
+    float: $floatLeft ;
+    margin-left: 0% ;
+    margin-right: 2% ;
+}
+.contact    form     input[ type="text" ] 
+{
+    float: $floatRight ;
+    margin-left: 2% ;
+    margin-right: 0% ;
+}
+.contact    form    textarea
+{
+    width: 100% ;
+    height: 180px ;
+    padding: 10px ;
+    margin-top: 20px ;
+    font-size: $mainFontSize - 2 ;
+    border: 1px solid #ccc ;
+    border-radius: 10px ;
+    background-color: transparent ;
+    color: #fff ;
+    outline: 0 ;    
+}
+.contact    form     input::-webkit-input-placeholder   ,
+.contact    form     textarea::-webkit-input-placeholder
+{
+    color: #fff ;
+}
+.contact    form    .form_info
+{
+    overflow: hidden ;
+    margin-top: 20px ;
+}
+.contact    form    .form_info  .hireUsBtn
+{
+    float: $floatLeft ;
+    width: 180px ;
+	padding: 10px ;
+	color: #fff ;
+	cursor: pointer ;
+	border: 1px	solid $mainColor ;
+	border-radius: 10px ;
+    /* transition خواص ال */
+    @extend %transition ;
+}
+.contact    form    .form_info  .hireUsBtn:hover
+{
+	background-color: #fff ;
+	border: 1px solid	#fff ; 
+	color: $mainColor ;
+}
+.contact    form    .form_info  .form-icons
+{
+    float: $floatRight ;
+}
+.contact    form    .form_info  .form-icons     i
+{
+    background-color: #9da1a5 ;
+    width: 40px ; 
+    height: 40px ;
+    /* vertically عشان الايقوانات تكون في المنتصف */
+    line-height: 40px ;
+    color: #fff ;
+    border-radius: 50% ;
+    cursor: pointer ;
+}
+.contact    form    .form_info  .form-icon   .fa-facebook    
+{
+    background-color: #3b5998 ; 
+}
+.contact    form    .form_info  .form-icons  .fa-twitter    
+{
+    background-color: #55acee ; 
+}
+.contact    form    .form_info  .form-icons  .fa-google-plus    
+{
+    background-color: #dc4e41 ; 
+}
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media( min-width:0px ) and ( max-width:800px )
+{
+    .contact    .contactH2
+    {
+        font-size: $mainFontSize + 14 ;
+    }
+    .contact    .contactPara
+    {
+        font-size: $mainFontSize - 2 ;
+    }   
+    .contact    form 
+    {
+        width: 100% ;
+    }
+    .contact    form    .form_info  .hireUsBtn
+    {
+        float: $floatLeft ;
+        width: 100px ;
+        padding: 10px ;
+    }
+}
+/*	##################################### start footer form #######################################  */
+.footer
+{
+    background-color: #3b434c ;
+    color: #fff ;
+    padding: 20px 0px ;
+    overflow: hidden ;
+}
+.footer .footerCopyright
+{
+    float: $floatLeft ;
+}
+.footer .footerDesign
+{
+    float: $floatRight ;
+}
+/* /////////////////////////////////  Responsive //////////////////////////////// */
+@media( min-width:0px ) and ( max-width:800px )
+{
+    .footer .footerCopyright
+    {
+        font-size: $mainFontSize - 1 ; 
+    }
+    .footer .footerDesign
+    {
+        font-size: $mainFontSize - 2 ; 
+    }
+}
+
+
+/* ------------------------------------ classes to Extend ------------------------------------ */
+// الكلاسات اللي هعمل لها احتواء في عناصر اخري
+%bk_cover
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    background-repeat: no-repeat ;
+    background-size: cover ;
+    background-position: center center ;
+}
+%transition
+{
+    -webkit-transition: all 0.5s ease-in-out ;
+    -moz-transition: all 0.5s ease-in-out ;
+    transition: all 0.5s ease-in-out ;
+}
+
+
+
+
+
+
+
+
+
